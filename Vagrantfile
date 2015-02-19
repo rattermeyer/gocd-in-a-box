@@ -15,6 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	inline: "apt-get update && apt-get upgrade -y && apt-get install -y git"
   config.vm.provision "shell",
 	path: "ansible-setup.sh"
+  config.vm.provision "shell", 
+    path: "docker-host.sh"
+  config.vm.provision "shell",
+    path: "go-docker-ci.sh"
 #  config.vm.provision "shell",
 #	path: "fig-up.sh"
 #  config.vm.provision "docker" do |d|
